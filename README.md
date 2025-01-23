@@ -26,11 +26,12 @@ addon | version | maintainers | summary
 [product_abc_classification](product_abc_classification/) | 16.0.1.1.0 |  | ABC classification for sales and warehouse management
 [product_abc_classification_sale_stock](product_abc_classification_sale_stock/) | 16.0.1.0.2 | [![rousseldenis](https://github.com/rousseldenis.png?size=30px)](https://github.com/rousseldenis) [![lmignon](https://github.com/lmignon.png?size=30px)](https://github.com/lmignon) [![lmarion-source](https://github.com/lmarion-source.png?size=30px)](https://github.com/lmarion-source) | Compute ABC classification from the number of delivered sale order line by product
 [product_assortment](product_assortment/) | 16.0.2.0.0 |  | Adds the ability to manage products assortment
+[product_attachment_zipped_download](product_attachment_zipped_download/) | 16.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Product Attachment Zipped Download
 [product_attribute_archive](product_attribute_archive/) | 16.0.1.0.0 |  | Add an active field on product attributes
 [product_attribute_company_favorite](product_attribute_company_favorite/) | 16.0.1.0.0 | [![victor-champonnois](https://github.com/victor-champonnois.png?size=30px)](https://github.com/victor-champonnois) | Possibility to set favorite product attributes per company
 [product_attribute_model_link](product_attribute_model_link/) | 16.0.1.0.1 |  | Use any model records as product attribute values
 [product_attribute_value_menu](product_attribute_value_menu/) | 16.0.1.0.1 |  | Product attributes values tree and form. Import attribute values.
-[product_category_active](product_category_active/) | 16.0.1.0.2 |  | Add option to archive product categories
+[product_category_active](product_category_active/) | 16.0.2.0.0 |  | Add option to archive product categories
 [product_category_code](product_category_code/) | 16.0.1.0.0 | [![rousseldenis](https://github.com/rousseldenis.png?size=30px)](https://github.com/rousseldenis) | Allows to define a code on product categories
 [product_category_description](product_category_description/) | 16.0.1.0.0 | [![MarcBForgeFlow](https://github.com/MarcBForgeFlow.png?size=30px)](https://github.com/MarcBForgeFlow) | Allows to add a detailed description for a product category.
 [product_category_hr_department](product_category_hr_department/) | 16.0.1.0.0 | [![smaciaosi](https://github.com/smaciaosi.png?size=30px)](https://github.com/smaciaosi) [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Link product categories to hr departments
@@ -59,7 +60,7 @@ addon | version | maintainers | summary
 [product_origin](product_origin/) | 16.0.1.0.0 | [![rousseldenis](https://github.com/rousseldenis.png?size=30px)](https://github.com/rousseldenis) [![legalsylvain](https://github.com/legalsylvain.png?size=30px)](https://github.com/legalsylvain) | Adds the origin of the product
 [product_packaging_container_deposit](product_packaging_container_deposit/) | 16.0.1.2.0 |  | Add container deposit fees in a order
 [product_packaging_dimension](product_packaging_dimension/) | 16.0.1.1.1 |  | Manage packaging dimensions and weight
-[product_packaging_level](product_packaging_level/) | 16.0.1.2.0 |  | This module binds a product packaging to a packaging level
+[product_packaging_level](product_packaging_level/) | 16.0.1.2.1 |  | This module binds a product packaging to a packaging level
 [product_packaging_level_purchasable](product_packaging_level_purchasable/) | 16.0.1.1.0 |  | Control purchase of products via packaging settings.
 [product_packaging_level_salable](product_packaging_level_salable/) | 16.0.1.0.0 |  | Product Packaging level salable
 [product_pricelist_alternative](product_pricelist_alternative/) | 16.0.1.2.0 |  | Calculate product price based on alternative pricelists
