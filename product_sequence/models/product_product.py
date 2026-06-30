@@ -22,7 +22,7 @@ class ProductProduct(models.Model):
     def create(self, vals_list):
         vals_list_updated = []
         for vals in vals_list:
-            if "default_code" not in vals or vals["default_code"] == "/":
+            if not vals.get("default_code") or vals["default_code"] == "/":
                 categ_id = vals.get("categ_id", False)
                 template_id = vals.get("product_tmpl_id", False)
                 category = self.env["product.category"]
@@ -45,6 +45,32 @@ class ProductProduct(models.Model):
         Note this is up to the user, if the product category is changed,
         she/he will need to write '/' on the internal reference to force the
         re-assignment."""
+        # A blank/false internal reference (e.g. propagated from the product
+        # template when the field is left empty) must never wipe the required
+        # code. Keep any existing code, and assign a fresh one only when the
+        # variant has none yet. Use '/' to explicitly force a new reference.
+        if "default_code" in vals and not vals["default_code"]:
+            vals = dict(vals)
+            vals.pop("default_code")
+            for product in self:
+                # Assign a fresh reference only when the variant has none yet,
+                # then mirror the code onto a single-variant template so the
+                # product form does not show a blank Internal Reference.
+                if not product.default_code:
+                    sequence = self.env["ir.sequence"].get_category_sequence_id(
+                        product.categ_id
+                    )
+                    super(ProductProduct, product).write(
+                        {"default_code": sequence.next_by_id()}
+                    )
+                tmpl = product.product_tmpl_id
+                if (
+                    len(tmpl.product_variant_ids) == 1
+                    and tmpl.default_code != product.default_code
+                ):
+                    tmpl.write({"default_code": product.default_code})
+            if not vals:
+                return True
         if vals.get("default_code", "") == "/":
             product_category_obj = self.env["product.category"]
             for product in self:
