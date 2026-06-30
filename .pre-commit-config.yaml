@@ -143,7 +143,12 @@ repos:
     rev: 3.1.8
     hooks:
       - id: setuptools-odoo-make-default
+        # setuptools>=81 dropped pkg_resources, which setuptools-odoo 3.1.8 still
+        # imports; pin a compatible setuptools in the hook env (CI was failing
+        # with ModuleNotFoundError: No module named 'pkg_resources').
+        additional_dependencies: ["setuptools<81"]
       - id: setuptools-odoo-get-requirements
+        additional_dependencies: ["setuptools<81"]
         args:
           - --output
           - requirements.txt
